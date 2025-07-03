@@ -39,9 +39,8 @@ const closeSearchBar = () => {
 }
 // função que abre a barra de pesquisa;
 const callSearchBar = () => {
-    const button =  document.querySelector("#search-swicth")
+    const button =  document.querySelector("#search-swicth");
     const searchBar = document.querySelector(".search-bar");
-    console.log(button,searchBar);
     button.addEventListener("click", ()=> {
         searchBar.style.display = "flex";
     });
