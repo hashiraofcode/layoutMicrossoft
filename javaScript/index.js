@@ -1,3 +1,19 @@
+//função que restaura o xbox;
+const restoreXboxSection = () => {
+    const xboxSection = document.querySelector(".xbox-container");
+    const oldXboxLayout = `
+        <div class="xbox-content">
+                <img src="./assets/games.png" alt="games background">
+                <div class="description-section-content">
+                    <h4>Xbox game pass ultimate</h4>
+                    <p>Jogue novos títulos desde o primeiro dia. Aproveite centenas de jogos de alta qualidade para
+                        jogar com amigos no console, no PC ou na nuvem.</p>
+                    <button>Participe agora</button>
+                </div>
+            </div>`
+    xboxSection.innerHTML = oldXboxLayout;
+};
+
 // função que altera xbox section: remover o atual e insere um card responsivo;
 const xboxSectionResponsive = () => {
     const section = document.querySelector(".xbox-container");
@@ -142,7 +158,10 @@ const widthIsCorrect = (mediaQuery) => {
     if (mediaQuery.matches) {
         modifyHeader();
         xboxSectionResponsive();
-    } else restoreHeader();
+    } else {
+        restoreHeader();
+        restoreXboxSection();
+    }
 };
 mediaQuery.addEventListener("change", widthIsCorrect);
 // código que verifica se a janela terminou de carregar para executar o código;

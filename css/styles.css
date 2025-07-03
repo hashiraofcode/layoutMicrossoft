@@ -158,23 +158,26 @@ header {
             max-height: 30px;
             cursor: pointer;
         }
+
         & .search-bar {
             position: absolute;
             right: 50%;
             top: -7px;
             display: none;
+
             & input {
                 width: 50dvw;
                 height: 30px;
                 padding: .9%;
                 font-size: 1rem;
             }
+
             & img {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%) translateX(-2%);
                 right: 2%;
-            
+
             }
         }
     }
@@ -585,11 +588,30 @@ footer {
         }
     }
 
+    .xbox-container {
+        & .xbox-content {
+            & .description-section-content {
+
+                & h4 {
+                    font-size: clamp(1rem, 15vw, 2rem);
+                    color: #fff;
+                }
+
+                & p {
+                    font-size: clamp(1.1rem, 15vw, 1.4rem);
+                    color: #fff;
+                    margin: 2rem 0;
+                }
+            }
+        }
+    }
+
     footer {
         & ul {
             width: 100%;
         }
     }
+
 }
 
 .responsive-menu {
