@@ -1,0 +1,722 @@
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+address,
+em,
+img,
+ins,
+strong,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+main,
+td,
+article,
+aside,
+figure,
+figcaption,
+footer,
+header,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+iframe {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px "Segoe UI", Arial, Helvetica, sans-serif;
+    color: #333;
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+
+#container {
+    width: 100%;
+    min-height: 100dvh;
+    max-width: 1900px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%;
+
+    & ul.option-menu {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        & li {
+            font-size: clamp(.7rem, 3vw, 1.3rem);
+            text-transform: capitalize;
+            color: #262626;
+            padding: clamp(1rem, 4vw, 1.6rem);
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 2px;
+                background-color: #000;
+            }
+
+            &:hover {
+                &::after {
+                    display: block;
+                }
+
+                cursor: pointer;
+            }
+        }
+
+        & li.container-logo {
+            min-width: 100px;
+
+            &>img {
+                width: 100%;
+                max-width: 108px;
+                min-height: 23px;
+                padding: clamp(.5rem, 2%, 1.4rem) clamp(.7rem, 3%, 1.3rem);
+                cursor: pointer;
+            }
+
+            &:hover {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    & ul.icons {
+        display: flex;
+        gap: 1rem;
+        justify-self: flex-end;
+        margin: 0;
+        padding: 0;
+
+        & .svg-ico {
+            max-width: 20px;
+            max-height: 30px;
+            cursor: pointer;
+        }
+    }
+}
+
+.elements-header-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5rem;
+    flex-grow: 1;
+}
+
+.content-carrossel-slide-1,
+.content-carrossel-slide-2 {
+    width: 30%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10%);
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+
+    & h2 {
+        font-size: clamp(1rem, 6vw, 4rem);
+        font-weight: 500;
+        color: #000;
+        text-transform: capitalize;
+
+        & span {
+            text-transform: lowercase;
+        }
+    }
+
+    & p {
+        font-size: clamp(.4rem, 4vw, 1.5rem);
+    }
+
+    & button {
+        width: auto;
+        max-width: 300px;
+        height: auto;
+        font-size: clamp(1rem, 5vw, 1.6rem);
+        color: #fff;
+        font-weight: 500;
+        text-transform: capitalize;
+        border-radius: .8rem;
+        padding: 3%;
+        background-color: #0067b8;
+        border: none;
+    }
+}
+
+.carousel-control-next-icon {
+    position: absolute;
+    right: 5px;
+}
+
+.carousel-control-prev-icon {
+    position: absolute;
+    left: 5px;
+}
+
+.services-options {
+    width: 100%;
+    height: 25dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .9rem;
+
+    & .container-card {
+        width: 15%;
+        min-width: 100px;
+        height: auto;
+        min-height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+
+        & .containerimg {
+            width: 20%;
+            height: 20%;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+        }
+
+        & a {
+            text-align: center;
+            width: 100%;
+            font-size: clamp(5px, 3vw, 13px);
+        }
+    }
+}
+
+.products {
+    width: 100%;
+    height: auto;
+
+    & .container-cards-products {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 5%;
+
+        & .card {
+            min-width: 300px;
+            height: 50rem;
+
+            & .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            & img {
+                height: 40%;
+                object-fit: fill;
+            }
+
+            & h5 {
+                margin: 0 auto 0 0;
+                font-size: clamp(1.5rem, 15vw, 2.5rem);
+                font-weight: 700;
+            }
+
+            & p {
+                margin-top: 1rem;
+                margin-bottom: auto;
+                font-size: clamp(1.2rem, 5vw, 1.5rem);
+            }
+
+            & a {
+                width: calc(100% - 25px);
+                font-size: clamp(1rem, 6vw, 1.8rem);
+                font-weight: 700;
+                color: #fff;
+                border-radius: none;
+                border: none;
+            }
+        }
+    }
+}
+
+.xbox-container {
+    width: 100%;
+    height: auto;
+    padding: 5%;
+    position: relative;
+
+    & .xbox-content {
+        & img {
+            width: calc(100% - 5%);
+            height: calc(100% - 5%);
+        }
+
+        & .description-section-content {
+            max-width: 30%;
+            position: absolute;
+            top: 45%;
+            left: 15%;
+            transform: translateY(-45%) translateX(-15%);
+
+            & h4 {
+                font-size: clamp(1rem, 15vw, 4rem);
+                color: #fff;
+            }
+
+            & p {
+                font-size: clamp(1.1rem, 15vw, 2rem);
+                color: #fff;
+                margin: 2rem 0;
+            }
+
+            & button {
+                width: auto;
+                height: auto;
+                font-size: clamp(1rem, 12vw, 1.3rem);
+                font-weight: 500;
+                color: #fff;
+                background-color: #0067b8;
+                border: none;
+                padding: 1%;
+            }
+        }
+    }
+}
+
+.busines-section {
+    width: 100%;
+    height: auto;
+    padding: 5%;
+
+    & h4 {
+        width: auto;
+        color: #000;
+        font-size: clamp(1rem, 12vw, 4rem);
+        margin-bottom: 3rem;
+    }
+
+    .flex-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: .9rem;
+
+        & .card {
+            min-width: 300px;
+            height: 50rem;
+
+            & .card-body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            & img {
+                height: 40%;
+                object-fit: fill;
+            }
+
+            & h5 {
+                margin: 0 auto 0 0;
+                font-size: clamp(1.5rem, 15vw, 2.5rem);
+                font-weight: 700;
+            }
+
+            & p {
+                margin-top: 1rem;
+                margin-bottom: auto;
+                font-size: clamp(1.2rem, 5vw, 1.5rem);
+            }
+
+            & a {
+                width: calc(100% - 25px);
+                font-size: clamp(1rem, 6vw, 1.8rem);
+                font-weight: 700;
+                color: #fff;
+                border-radius: none;
+                border: none;
+            }
+        }
+    }
+}
+
+.medias-sociais {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+    gap: 1rem;
+
+    & p {
+        padding-top: .7rem;
+        font-size: clamp(.5rem, 5vw, 1.3rem);
+    }
+
+    & img {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+    }
+}
+
+footer {
+    width: 100%;
+    min-height: 40dvh;
+    background-color: #f2f2f2;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 2%;
+    gap: 1rem;
+
+    & ul {
+        width: auto;
+        height: auto;
+
+        & li.title-footer-options {
+            font-size: clamp(1rem, 5vw, 1.5rem);
+            font-weight: 700;
+            color: #616161;
+            text-transform: capitalize;
+        }
+
+        & li:not(.title-footer-options) {
+            max-width: auto;
+            font-size: clamp(.5rem, 5vw, 1rem);
+            text-transform: capitalize;
+            cursor: pointer;
+            margin: 1rem 0;
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: #000;
+            }
+
+            &:hover {
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.extras {
+    height: 4dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & p {
+        display: flex;
+        align-items: flex-start;
+        font-size: clamp(1rem, 5vw, 1.4rem);
+        text-transform: uppercase;
+
+        & span {
+            margin-left: .3rem;
+            font-size: 9px;
+        }
+    }
+}
+
+/* Informações sobre o código:
+1- Este código foi feito utilizando a biblioteca de estilização Bootstrap, css, html e javaScript.
+2- A estrutura fundamental do código ou seja as seções do site estão estilizadas em css porém também existem componentes importados da biblioteca que possuem alterações de estilização neste css;
+3- O site está sendo alterado via javaScript foi a maneira que encontrei de deixar o site responsivo de uma maneira mais facil.
+4- Por conta disso existe um modal para avisar os recrutadores que forem testar a responsividade do site para recarrega-lo na largura de tela para as mudanças serem alicadas corretamente.
+5- Apartir deste aviso todo o código abaixo será para estilizar os componentes responsivos que vão ser inseridos via JS.
+*/
+
+/*  código para deixar o código responsivo */
+@media (max-width: 768px) {
+    #carouselExampleIndicators {
+        & .carousel-item {
+            height: 35vh;
+            /* ou até 100vh se quiser ocupar toda a tela */
+        }
+
+        & .carousel-item.carousel-item {
+            & img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .content-carrossel-slide-1,
+    .content-carrossel-slide-2 {
+        width: 50%;
+
+        & h2 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+        }
+
+        & p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+        }
+
+        & button {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+        }
+
+        & span {
+            text-transform: lowercase;
+        }
+    }
+
+    footer {
+        & ul {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
+
+    .container-cards-products,
+    .busines-section {
+        & .card:last-child {
+            margin-right: auto;
+        }
+    }
+
+    footer {
+        & ul {
+            width: 100%;
+        }
+    }
+}
+
+.responsive-menu {
+    position: absolute;
+    top: 0;
+    left: -1;
+    z-index: 1000;
+    height: 100dvh;
+    width: 0;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    overflow: hidden;
+
+    & button {
+        margin-left: auto;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        border: none;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        position: relative;
+
+        & span {
+            width: 100%;
+            height: 100%;
+            border: none;
+
+            &::after,
+            &::before {
+                content: "";
+                display: block;
+                min-width: 100%;
+                height: 3px;
+                background-color: #000;
+                border-radius: .8rem;
+                border: none;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform-origin: center;
+            }
+
+            &::after {
+                transform: rotate(45deg);
+            }
+
+            &::before {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    &>ul {
+        width: 100%;
+        height: auto;
+        flex-grow: 1;
+        padding: 0;
+
+        & li {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            border-bottom: 1px solid #000;
+            min-height: 50px;
+            font-size: clamp(1.2rem, 6vw, 2rem);
+            font-weight: 500;
+            text-transform: capitalize;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: .9rem;
+        }
+    }
+}
+
+/* abrindo o menu */
+.responsive-menu.active {
+    width: 50dvw;
+    left: 0;
+}
+
+/* header responsivo */
+header.responsive {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & button {
+        order: 1;
+        border: none;
+        background-color: transparent;
+        width: 30px;
+        height: 30px;
+        padding: 0;
+
+        & span#menu-hamburguer {
+            position: relative;
+            width: 100%;
+            height: 4px;
+            border-radius: .8rem;
+            background-color: #000;
+            display: inline-block;
+            border-radius: 2px;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background-color: #000;
+                border-radius: 2px;
+            }
+
+            &::after {
+                top: 8px;
+            }
+
+            &::before {
+                top: -8px;
+            }
+        }
+
+    }
+
+    & img[src="./assets/0_logo.png"] {
+        order: 2;
+        width: 20%;
+        max-height: 50px;
+    }
+
+    & .icons {
+        order: 3;
+    }
+}
+
+/* concerando problema no dropDouwn do menu */
+button.btn.btn-secondary.dropdown-toggle.bg-transparent.text-black.border.border-0.text-capitalize.fs-5 {
+    min-width: 132px;
+}
