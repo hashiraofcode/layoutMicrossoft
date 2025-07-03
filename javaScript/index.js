@@ -13,6 +13,24 @@ const xboxSectionResponsive = () => {
                 </div>`;
 
 }
+// função que fecha a barra de pesquisa;
+const closeSearchBar = () => {
+    const input = document.querySelector("#search");
+    const searchBar = document.querySelector(".search-bar");
+    input.addEventListener("blur", () => {
+       searchBar.style.display = "none";
+    })
+}
+// função que abre a barra de pesquisa;
+const callSearchBar = () => {
+    const button =  document.querySelector("#search-swicth")
+    const searchBar = document.querySelector(".search-bar");
+    console.log(button,searchBar);
+    button.addEventListener("click", ()=> {
+        searchBar.style.display = "flex";
+    });
+    closeSearchBar()
+}
 
 //função que abre o menu 
 const openMenu = () => {
@@ -25,7 +43,8 @@ const closeMenu = () => {
 // função que retornar o header como tava para as telas maiores;
 const restoreHeader = () => {
     const header = document.querySelector("header");
-    const oldHeader = ` <ul class="option-menu">
+    const oldHeader = `
+      <ul class="option-menu">
                 <li class="container-logo"><img src="./assets/0_logo.png" alt="logo microssoft" class="logo"
                         id="inicio"></li>
                 <li>Microssoft</li>
@@ -51,11 +70,20 @@ const restoreHeader = () => {
                 </div>
                 <!-- icones e funcionalidadew -->
                 <ul class="icons">
-                    <li><img src="./assets/search.svg" alt="search" class="svg-ico"></li>
+                    <div class="search-bar">
+                        <input type="text" id="search" placeholder="O que procura?">
+                        <img src="./assets/search.svg" alt="search" class="svg-ico">
+                    </div>
+                    <li>
+                        <label for="search" aria-label="botão barra de pesquisa">
+                            <img src="./assets/search.svg" alt="search" class="svg-ico" id="search-swicth">
+                        </label>
+                    </li>
                     <li><img src="./assets/cart.svg" alt="cart" class="svg-ico"></li>
                     <li><img src="./assets/person.svg" alt="person" class="svg-ico"></li>
                 </ul>
-            </div>`;
+            </div>
+    `;
         header.innerHTML = oldHeader; 
 };
 
@@ -120,4 +148,5 @@ mediaQuery.addEventListener("change", widthIsCorrect);
 // código que verifica se a janela terminou de carregar para executar o código;
 window.onload = () => {
     widthIsCorrect(mediaQuery);
+    callSearchBar();
 }

@@ -146,6 +146,7 @@ header {
     }
 
     & ul.icons {
+        position: relative;
         display: flex;
         gap: 1rem;
         justify-self: flex-end;
@@ -156,6 +157,25 @@ header {
             max-width: 20px;
             max-height: 30px;
             cursor: pointer;
+        }
+        & .search-bar {
+            position: absolute;
+            right: 50%;
+            top: -7px;
+            display: none;
+            & input {
+                width: 50dvw;
+                height: 30px;
+                padding: .9%;
+                font-size: 1rem;
+            }
+            & img {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%) translateX(-2%);
+                right: 2%;
+            
+            }
         }
     }
 }

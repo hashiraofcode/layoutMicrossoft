@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-        <script src="./javaScript/index.js"></script>
+    <script src="./javaScript/index.js"></script>
     <title>Microssoft</title>
 </head>
 
@@ -42,7 +42,15 @@
                 </div>
                 <!-- icones e funcionalidadew -->
                 <ul class="icons">
-                    <li><img src="./assets/search.svg" alt="search" class="svg-ico"></li>
+                    <div class="search-bar">
+                        <input type="text" id="search" placeholder="O que procura?">
+                        <img src="./assets/search.svg" alt="search" class="svg-ico">
+                    </div>
+                    <li>
+                        <label for="search" aria-label="botão barra de pesquisa">
+                            <img src="./assets/search.svg" alt="search" class="svg-ico" id="search-swicth">
+                        </label>
+                    </li>
                     <li><img src="./assets/cart.svg" alt="cart" class="svg-ico"></li>
                     <li><img src="./assets/person.svg" alt="person" class="svg-ico"></li>
                 </ul>
